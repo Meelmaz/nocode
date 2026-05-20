@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Registrarse — NeuroIA{% endblock %}
+
+{% block content %}
+<section class="auth-section" id="register-section">
+    <!-- Orbes de fondo animados -->
+    <div class="auth-orb auth-orb-1"></div>
+    <div class="auth-orb auth-orb-2"></div>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-6 col-lg-5">
+                <div class="auth-card" id="register-card">
+                    <!-- Header del formulario -->
+                    <div class="auth-header">
+                        <div class="auth-icon auth-icon-pink">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                        <h2 class="auth-title">Crear cuenta</h2>
+                        <p class="auth-subtitle">Únete a la comunidad de IA</p>
+                    </div>
+
+                    <!-- Formulario de Registro -->
+                    <form method="POST" action="{% url 'register' %}" class="auth-form" id="register-form">
+                        {% csrf_token %}
+
+                        <!-- Campo: Usuario -->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control neon-input" id="register-username" 
+                                   name="username" placeholder="Usuario" required autocomplete="username"
+                                   value="{{ form.username.value|default:'' }}">
+                            <label for="register-username"><i class="bi bi-person"></i> Usuario</label>
+                        </div>
+
+                        <!-- Campo: Email -->
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control neon-input" id="register-email" 
+                                   name="email" placeholder="correo@ejemplo.com" required autocomplete="email"
+                                   value="{{ form.email.value|default:'' }}">
+                            <label for="register-email"><i class="bi bi-envelope"></i> Correo electrónico</label>
+                        </div>
+
+                        <!-- Campo: Contraseña -->
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control neon-input" id="register-password1" 
+                                   name="password1" placeholder="Contraseña" required autocomplete="new-password">
+                            <label for="register-password1"><i class="bi bi-lock"></i> Contraseña</label>
+                        </div>
+
+                        <!-- Campo: Confirmar contraseña -->
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control neon-input" id="register-password2" 
+                                   name="password2" placeholder="Confirmar contraseña" required autocomplete="new-password">
+                            <label for="register-password2"><i class="bi bi-lock-fill"></i> Confirmar contraseña</label>
+                        </div>
+
+                        <!-- Errores del formulario -->
+                        {% if form.errors %}
+                        <div class="auth-errors" id="register-errors">
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                <div class="auth-error">
+                                    <i class="bi bi-exclamation-circle"></i> {{ error }}
+                                </div>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <!-- Botón de envío -->
+                        <button type="submit" class="btn btn-neon-pink btn-lg w-100 mt-3" id="register-submit">
+                            <i class="bi bi-person-plus"></i> Crear cuenta
+                        </button>
+                    </form>
+
+                    <!-- Link a login -->
+                    <div class="auth-footer">
+                        <p>¿Ya tienes cuenta? <a href="{% url 'login' %}" class="auth-link" id="register-to-login">Inicia sesión</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Iniciar sesión — NeuroIA{% endblock %}
+
+{% block content %}
+<section class="auth-section" id="login-section">
+    <!-- Orbes de fondo animados -->
+    <div class="auth-orb auth-orb-1"></div>
+    <div class="auth-orb auth-orb-2"></div>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-5 col-lg-4">
+                <div class="auth-card" id="login-card">
+                    <!-- Header del formulario -->
+                    <div class="auth-header">
+                        <div class="auth-icon auth-icon-green">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h2 class="auth-title">Iniciar sesión</h2>
+                        <p class="auth-subtitle">Accede a tu panel de IA</p>
+                    </div>
+
+                    <!-- Formulario de Login -->
+                    <form method="POST" action="{% url 'login' %}" class="auth-form" id="login-form">
+                        {% csrf_token %}
+
+                        <!-- Campo: Usuario -->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control neon-input" id="login-username" 
+                                   name="username" placeholder="Usuario" required autocomplete="username">
+                            <label for="login-username"><i class="bi bi-person"></i> Usuario</label>
+                        </div>
+
+                        <!-- Campo: Contraseña -->
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control neon-input" id="login-password" 
+                                   name="password" placeholder="Contraseña" required autocomplete="current-password">
+                            <label for="login-password"><i class="bi bi-lock"></i> Contraseña</label>
+                        </div>
+
+                        <!-- Errores del formulario -->
+                        {% if form.errors %}
+                        <div class="auth-errors" id="login-errors">
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                <div class="auth-error">
+                                    <i class="bi bi-exclamation-circle"></i> {{ error }}
+                                </div>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <!-- Botón de envío -->
+                        <button type="submit" class="btn btn-neon-green btn-lg w-100 mt-3" id="login-submit">
+                            <i class="bi bi-box-arrow-in-right"></i> Entrar
+                        </button>
+                    </form>
+
+                    <!-- Link a registro -->
+                    <div class="auth-footer">
+                        <p>¿No tienes cuenta? <a href="{% url 'register' %}" class="auth-link" id="login-to-register">Regístrate aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

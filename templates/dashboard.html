@@ -1,0 +1,354 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard — NeuroIA{% endblock %}
+
+{% block content %}
+
+<!-- ==========================================
+     HERO DEL DASHBOARD
+     ========================================== -->
+<section class="dash-hero py-4" id="dash-hero">
+    <div class="dash-hero-particles"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="dash-welcome animate-fade-up">
+                    <span class="dash-badge"><i class="bi bi-shield-check"></i> Panel Privado</span>
+                    <h1 class="dash-title">
+                        Bienvenido, <span class="text-neon-green">{{ user.username }}</span>
+                    </h1>
+                    <p class="dash-subtitle">
+                        Explora todo el contenido sobre Inteligencia Artificial y Redes Neuronales Artificiales.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center animate-fade-up delay-1">
+                <img src="{% static 'images/neural-network.png' %}" alt="Red Neuronal" class="dash-hero-img" id="dash-hero-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     DEFINICIONES DE INTELIGENCIA ARTIFICIAL
+     ========================================== -->
+<section class="dash-section" id="section-definiciones">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+            <span class="section-badge"><i class="bi bi-book"></i> Fundamentos</span>
+            <h2 class="section-title">Definición de <span class="text-neon-green">Inteligencia Artificial</span></h2>
+            <p class="section-subtitle">Según los expertos más reconocidos del campo</p>
+        </div>
+
+        <div class="row g-4 mt-4">
+            <!-- John McCarthy -->
+            <div class="col-lg-4 animate-on-scroll">
+                <div class="quote-card card-3d" id="quote-mccarthy">
+                    <div class="quote-card-accent accent-green"></div>
+                    <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "La inteligencia artificial es la ciencia e ingeniería de crear máquinas inteligentes, 
+                        especialmente programas de computación inteligentes."
+                    </blockquote>
+                    <div class="quote-author">
+                        <div class="quote-author-avatar">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div>
+                            <h4 class="quote-author-name">John McCarthy</h4>
+                            <p class="quote-author-role">Padre de la Inteligencia Artificial (1956)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Russell & Norvig -->
+            <div class="col-lg-4 animate-on-scroll">
+                <div class="quote-card card-3d" id="quote-russell">
+                    <div class="quote-card-accent accent-pink"></div>
+                    <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "La IA es el estudio de agentes que reciben percepciones del entorno y realizan acciones. 
+                        Cada agente implementa una función que mapea secuencias de percepciones a acciones."
+                    </blockquote>
+                    <div class="quote-author">
+                        <div class="quote-author-avatar">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="quote-author-name">Stuart Russell y Peter Norvig</h4>
+                            <p class="quote-author-role">Autores de "Artificial Intelligence: A Modern Approach"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marvin Minsky -->
+            <div class="col-lg-4 animate-on-scroll">
+                <div class="quote-card card-3d" id="quote-minsky">
+                    <div class="quote-card-accent accent-gradient"></div>
+                    <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                    </div>
+                    <blockquote class="quote-text">
+                        "La inteligencia artificial es la ciencia de hacer que las máquinas realicen tareas 
+                        que requerirían inteligencia si fueran hechas por humanos."
+                    </blockquote>
+                    <div class="quote-author">
+                        <div class="quote-author-avatar">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div>
+                            <h4 class="quote-author-name">Marvin Minsky</h4>
+                            <p class="quote-author-role">Co-fundador del MIT AI Lab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     REDES NEURONALES ARTIFICIALES
+     ========================================== -->
+<section class="dash-section dash-section-alt" id="section-redes">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+            <span class="section-badge"><i class="bi bi-diagram-3"></i> Conceptos Clave</span>
+            <h2 class="section-title">Redes Neuronales <span class="text-neon-pink">Artificiales</span></h2>
+            <p class="section-subtitle">Comprendiendo la arquitectura inspirada en el cerebro humano</p>
+        </div>
+
+        <div class="row align-items-center mt-3">
+            <div class="col-lg-6 animate-on-scroll">
+                <div class="info-card glass-card" id="info-que-son">
+                    <h3 class="info-title"><i class="bi bi-question-circle text-neon-green"></i> ¿Qué son?</h3>
+                    <p class="info-text">
+                        Las <strong>Redes Neuronales Artificiales (RNA)</strong> son modelos computacionales inspirados en 
+                        la estructura y funcionamiento del cerebro humano. Están compuestas por unidades de procesamiento 
+                        llamadas <strong>neuronas artificiales</strong>, organizadas en capas y conectadas entre sí 
+                        mediante pesos sinápticos.
+                    </p>
+                </div>
+
+                <div class="info-card glass-card mt-4" id="info-como-funcionan">
+                    <h3 class="info-title"><i class="bi bi-gear text-neon-pink"></i> ¿Cómo funcionan?</h3>
+                    <p class="info-text">
+                        Cada neurona recibe entradas, las multiplica por sus pesos, aplica una <strong>función de activación</strong> 
+                        y produce una salida. El proceso de <strong>aprendizaje</strong> consiste en ajustar los pesos de las conexiones 
+                        para minimizar el error entre la salida obtenida y la salida deseada, utilizando algoritmos como 
+                        <strong>backpropagation</strong> (retropropagación del error).
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 animate-on-scroll">
+                <div class="info-card glass-card" id="info-capas">
+                    <h3 class="info-title"><i class="bi bi-layers text-neon-green"></i> Capas Neuronales</h3>
+                    <div class="layers-diagram">
+                        <div class="layer-item">
+                            <div class="layer-dot layer-dot-green"></div>
+                            <div>
+                                <h5>Capa de Entrada</h5>
+                                <p>Recibe los datos iniciales del exterior. Cada neurona representa una característica del dato de entrada.</p>
+                            </div>
+                        </div>
+                        <div class="layer-item">
+                            <div class="layer-dot layer-dot-pink"></div>
+                            <div>
+                                <h5>Capas Ocultas</h5>
+                                <p>Procesan la información mediante transformaciones matemáticas. Pueden ser una o varias capas (deep learning).</p>
+                            </div>
+                        </div>
+                        <div class="layer-item">
+                            <div class="layer-dot layer-dot-gradient"></div>
+                            <div>
+                                <h5>Capa de Salida</h5>
+                                <p>Produce el resultado final de la red. El formato depende del tipo de problema (clasificación, regresión, etc.).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card glass-card mt-4" id="info-aprendizaje">
+                    <h3 class="info-title"><i class="bi bi-graph-up-arrow text-neon-pink"></i> Aprendizaje Automático</h3>
+                    <p class="info-text">
+                        Las redes neuronales aprenden a través de un proceso iterativo donde se presentan datos de entrenamiento, 
+                        se calcula el error y se ajustan los pesos. Los tipos principales de aprendizaje son:
+                    </p>
+                    <div class="learning-types">
+                        <span class="learning-badge learning-green"><i class="bi bi-check2-circle"></i> Supervisado</span>
+                        <span class="learning-badge learning-pink"><i class="bi bi-arrow-repeat"></i> No Supervisado</span>
+                        <span class="learning-badge learning-gradient"><i class="bi bi-trophy"></i> Por Refuerzo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     TIPOS DE REDES NEURONALES
+     ========================================== -->
+<section class="dash-section" id="section-tipos">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+            <span class="section-badge"><i class="bi bi-collection"></i> Arquitecturas</span>
+            <h2 class="section-title">Tipos de <span class="text-neon-green">Redes Neuronales</span></h2>
+            <p class="section-subtitle">Conoce las principales arquitecturas y sus aplicaciones</p>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <!-- Perceptrón Simple -->
+            <div class="col-lg-4 col-md-6 animate-on-scroll">
+                <div class="nn-card card-3d" id="nn-perceptron">
+                    <div class="nn-card-img-wrapper">
+                        <img src="{% static 'images/neural-network.png' %}" alt="Perceptrón Simple" class="nn-card-img">
+                        <div class="nn-card-overlay">
+                            <span class="nn-card-badge badge-green">Básico</span>
+                        </div>
+                    </div>
+                    <div class="nn-card-body">
+                        <h3 class="nn-card-title">Perceptrón Simple</h3>
+                        <p class="nn-card-desc">
+                            La unidad más básica de una red neuronal. Es un modelo de una sola neurona que puede 
+                            clasificar datos en dos categorías mediante una función de activación lineal. 
+                            Fue propuesto por <strong>Frank Rosenblatt</strong> en 1958.
+                        </p>
+                        <div class="nn-card-tags">
+                            <span class="nn-tag">Clasificación binaria</span>
+                            <span class="nn-tag">Lineal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perceptrón Multicapa (MLP) -->
+            <div class="col-lg-4 col-md-6 animate-on-scroll">
+                <div class="nn-card card-3d" id="nn-mlp">
+                    <div class="nn-card-img-wrapper">
+                        <img src="{% static 'images/neural-network.png' %}" alt="Perceptrón Multicapa MLP" class="nn-card-img">
+                        <div class="nn-card-overlay">
+                            <span class="nn-card-badge badge-pink">Intermedio</span>
+                        </div>
+                    </div>
+                    <div class="nn-card-body">
+                        <h3 class="nn-card-title">Perceptrón Multicapa (MLP)</h3>
+                        <p class="nn-card-desc">
+                            Extensión del perceptrón con múltiples capas ocultas. Puede resolver problemas 
+                            no lineales gracias a las funciones de activación no lineales. Utiliza 
+                            <strong>backpropagation</strong> para el entrenamiento.
+                        </p>
+                        <div class="nn-card-tags">
+                            <span class="nn-tag">No lineal</span>
+                            <span class="nn-tag">Backpropagation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CNN -->
+            <div class="col-lg-4 col-md-6 animate-on-scroll">
+                <div class="nn-card card-3d" id="nn-cnn">
+                    <div class="nn-card-img-wrapper">
+                        <img src="{% static 'images/cnn.png' %}" alt="Red Neuronal Convolucional CNN" class="nn-card-img">
+                        <div class="nn-card-overlay">
+                            <span class="nn-card-badge badge-green">Avanzado</span>
+                        </div>
+                    </div>
+                    <div class="nn-card-body">
+                        <h3 class="nn-card-title">CNN — Convolucional</h3>
+                        <p class="nn-card-desc">
+                            Diseñada para procesar datos con estructura de cuadrícula como imágenes. Utiliza 
+                            <strong>capas convolucionales</strong> que aplican filtros para detectar patrones 
+                            como bordes, texturas y formas complejas. Revolucionó la visión por computadora.
+                        </p>
+                        <div class="nn-card-tags">
+                            <span class="nn-tag">Visión por computadora</span>
+                            <span class="nn-tag">Filtros</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RNN -->
+            <div class="col-lg-4 col-md-6 animate-on-scroll">
+                <div class="nn-card card-3d" id="nn-rnn">
+                    <div class="nn-card-img-wrapper">
+                        <img src="{% static 'images/neural-network.png' %}" alt="Red Neuronal Recurrente RNN" class="nn-card-img">
+                        <div class="nn-card-overlay">
+                            <span class="nn-card-badge badge-pink">Avanzado</span>
+                        </div>
+                    </div>
+                    <div class="nn-card-body">
+                        <h3 class="nn-card-title">RNN — Recurrente</h3>
+                        <p class="nn-card-desc">
+                            Diseñada para datos secuenciales. Las neuronas tienen conexiones que forman 
+                            <strong>ciclos dirigidos</strong>, permitiendo que la red tenga "memoria" de entradas 
+                            anteriores. Ideal para series temporales y procesamiento de lenguaje.
+                        </p>
+                        <div class="nn-card-tags">
+                            <span class="nn-tag">Secuencias</span>
+                            <span class="nn-tag">Memoria temporal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LSTM -->
+            <div class="col-lg-4 col-md-6 animate-on-scroll">
+                <div class="nn-card card-3d" id="nn-lstm">
+                    <div class="nn-card-img-wrapper">
+                        <img src="{% static 'images/gan.png' %}" alt="Red LSTM" class="nn-card-img">
+                        <div class="nn-card-overlay">
+                            <span class="nn-card-badge badge-gradient">Avanzado</span>
+                        </div>
+                    </div>
+                    <div class="nn-card-body">
+                        <h3 class="nn-card-title">LSTM — Long Short-Term Memory</h3>
+                        <p class="nn-card-desc">
+                            Variante especial de RNN que resuelve el problema del <strong>desvanecimiento del gradiente</strong>. 
+                            Utiliza compuertas (forget, input, output) para controlar el flujo de información y 
+                            mantener dependencias a largo plazo.
+                        </p>
+                        <div class="nn-card-tags">
+                            <span class="nn-tag">Memoria largo plazo</span>
+                            <span class="nn-tag">Compuertas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GAN -->
+            <div class="col-lg-4 col-md-6 animate-on-scroll">
+                <div class="nn-card card-3d" id="nn-gan">
+                    <div class="nn-card-img-wrapper">
+                        <img src="{% static 'images/gan.png' %}" alt="Red Generativa Adversaria GAN" class="nn-card-img">
+                        <div class="nn-card-overlay">
+                            <span class="nn-card-badge badge-green">Generativo</span>
+                        </div>
+                    </div>
+                    <div class="nn-card-body">
+                        <h3 class="nn-card-title">GAN — Generativa Adversaria</h3>
+                        <p class="nn-card-desc">
+                            Arquitectura compuesta por dos redes: un <strong>Generador</strong> que crea datos 
+                            sintéticos y un <strong>Discriminador</strong> que intenta distinguir datos reales de falsos. 
+                            Compiten entre sí mejorando continuamente. Propuesta por <strong>Ian Goodfellow</strong> en 2014.
+                        </p>
+                        <div class="nn-card-tags">
+                            <span class="nn-tag">Generación de imágenes</span>
+                            <span class="nn-tag">Adversarial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
